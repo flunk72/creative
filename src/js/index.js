@@ -2,6 +2,15 @@ const openMenu = document.getElementById('sidebar-btn');
 const sideBar = document.getElementById('navbar');
 
 openMenu.addEventListener('click', () => {
-  console.log('btn');
   sideBar.classList.toggle('navbar-open')
+})
+
+document.addEventListener("DOMContentLoaded", function(e) {
+  function resize () {
+  if (window.innerWidth < 1200) {
+    sideBar.classList.remove('navbar-open');
+    console.log(sideBar.className)
+  }
+}
+window.onresize = resize;
 })
